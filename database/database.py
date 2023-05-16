@@ -91,7 +91,7 @@ async def get_client(client_id: int):
 
 
 async def get_all_clients(user_id: int):
-    query = select([client]).where(users.c.id == user_id)
+    query = select([client]).where(client.c.user_id == user_id)
     return await database.fetch_all(query)
 
 
